@@ -33,6 +33,7 @@ html {
 body {
     font-family: "Raleway", sans-serif;
     background-image: url("../images/bg-mobile.png");
+    background-color: var(--very-dark-blue);
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -42,7 +43,6 @@ body {
 @media (min-width: 54.85rem) {
     body {
         background-image: url(../images/bg-desktop.png);
-        background-color: var(--very-dark-blue);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom;
