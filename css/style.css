@@ -1,0 +1,245 @@
+/* Raleway font from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+/* Start Variables */
+
+:root {
+    --gradient-from: hsl(6, 100%, 80%);
+    --gradient-to: hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+
+    --font-size-300: 0.75rem;
+    --font-size-400: 0.875rem;
+    --font-size-700: 2.187rem;
+}
+
+@media (min-width: 54.85rem) {
+    :root {
+        --font-size-400: 1rem;
+    }
+}
+
+/* End Variables */
+
+/* Start General Styles */
+
+html {
+    font-size: var(--font-size-400);
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    background-image: url("../images/bg-mobile.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 54.85rem) {
+    body {
+        background-image: url(../images/bg-desktop.png);
+        background-color: var(--very-dark-blue);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+}
+
+.icon {
+    width: 20px;
+}
+
+.container {
+    padding: 0 2em;
+    width: 100%;
+}
+
+@media (min-width: 54.85rem) {
+    .container {
+        max-width: 70rem;
+    }
+}
+
+/* End General Styles */
+
+/* Start Main Content */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1em;
+}
+
+main > section {
+    background: var(--dark-blue);
+    padding: 3em;
+    box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+}
+
+.title {
+    border-radius: 0.8em 8em 0.8em 0.8em;
+    -webkit-border-radius: 0.8em 8em 0.8em 0.8em;
+    -moz-border-radius: 0.8em 8em 0.8em 0.8em;
+    -ms-border-radius: 0.8em 8em 0.8em 0.8em;
+    -o-border-radius: 0.8em 8em 0.8em 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title .logo {
+    width: 9.64em;
+    margin-bottom: 2em;
+}
+
+.title nav ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+.title nav ul li {
+    width: 50px;
+    height: 50px;
+    background: var(--very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -ms-border-radius: 0.8em;
+    -o-border-radius: 0.8em;
+}
+
+.usage {
+    border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -ms-border-radius: 0.8em;
+    -o-border-radius: 0.8em;
+    position: relative;
+    color: var(--pale-blue);
+    text-align: center;
+}
+
+.usage p span {
+    font-weight: bold;
+}
+
+.usage .progress {
+    background: #14204a;
+    margin: 1em auto;
+    overflow: hidden;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    padding: 0.2em;
+}
+
+.usage .progress .bar {
+    display: block;
+    height: 1.2em;
+    background: linear-gradient(
+        to right,
+        var(--gradient-from),
+        var(--gradient-to)
+    );
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    position: relative;
+}
+
+.usage .progress .bar::before {
+    content: "";
+    width: 0.785em;
+    height: 0.785em;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.usage .storage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.usage .storage span {
+    font-weight: bold;
+}
+
+.usage .left-storage {
+    border-radius: 0.6em;
+    position: absolute;
+    padding: 1em;
+    background: white;
+    color: #333;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.usage .left-storage span:first-child {
+    color: var(--very-dark-blue);
+    font-size: var(--font-size-700);
+    font-weight: bold;
+}
+
+.usage .left-storage span:last-child {
+    color: var(--grayish-blue);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: var(--font-size-300);
+    width: 7ch;
+}
+
+@media (min-width: 54.85rem) {
+    main {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .title {
+        padding-right: 6rem;
+    }
+
+    .usage {
+        flex: 1;
+        padding: 2em;
+        text-align: left;
+    }
+
+    .usage .left-storage {
+        bottom: 85%;
+        left: 86%;
+    }
+
+    .usage .left-storage::before {
+        content: "";
+        width: 2em;
+        height: 2em;
+        background: white;
+        position: absolute;
+        bottom: -30%;
+        right: 0;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+}
+
+/* End Main Content */
