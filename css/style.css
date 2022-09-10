@@ -43,7 +43,7 @@ body {
 @media (min-width: 54.85rem) {
     body {
         background-image: url(../images/bg-desktop.png);
-        background-size: contain;
+        background-size: 100% 50vh;
         background-repeat: no-repeat;
         background-position: bottom;
     }
